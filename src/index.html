@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Restaurant</title>
+<script src = "../lib/angular.min.js"></script>
+<script src = "../app/restaurantApp.js"></script>
+<link rel="stylesheet" type="text/css" href="./stylesheets/index.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="restaurantApp" ng-controller="restaurantCotroller">
+	<div class="container">
+	<div id="header" class="row">
+		<div style="width:15%;float:left" class="col"></div>
+		<div class="col">
+			<br>
+			<p id="strong">My Restaurant</p>
+			
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col" style="width:15%;height:100%;float:left;"></br>
+		</div>
+	<div class="col" style="float:left">
+	<div ng-repeat="x in restaurantMenu">
+		<table class="table">
+			<tr>
+				<td id="img1">
+					<div>
+						<img ng-src="{{ vegflag(x.vegflag) }}" />
+					</div>
+				</td>
+				<td style="width:85%">
+					<div>
+						<h3><span> {{ x.name }} </span></h3>
+					</div>
+				</td>
+				<td>
+					<div>
+						<span> {{ x.price|currency }} </span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+				<div>
+					<span> Available Time: {{ x.availabletime }} </span>
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+				<div>
+					<span> {{ description(x.description) }} </span>
+				</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	<div class="col" style="width:20%;height:100%;float:left;"></br>
+	</div>
+</div>
+	</div>
+</body>
+</html>

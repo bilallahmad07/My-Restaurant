@@ -1,0 +1,27 @@
+#img1{
+	width: 10px; 
+}
+
+#name{
+	width: 700px; 
+}
+
+#header{
+height:80px;
+background-color: #D13137;
+
+}
+
+#header div{
+	height:80px;
+	
+}
+
+#header span{
+	padding-top:40px;
+}
+
+#strong{
+	font-size:30px;
+	font-family:Comic Sans MS, cursive, sans-serif;
+}
