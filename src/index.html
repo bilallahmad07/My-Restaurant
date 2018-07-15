@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>My Restaurant</title>
-<script src = "../lib/angular.min.js"></script>
-<script src = "../app/restaurantApp.js"></script>
-<link rel="stylesheet" type="text/css" href="./stylesheets/index.css" />
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body ng-app="restaurantApp" ng-controller="restaurantCotroller">
-	<div class="container">
-	<div id="header" class="row">
-		<div style="width:15%;float:left" class="col"></div>
-		<div class="col">
-			<br>
-			<p id="strong">My Restaurant</p>
-			
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col" style="width:15%;height:100%;float:left;"></br>
-		</div>
-	<div class="col" style="float:left">
-	<div ng-repeat="x in restaurantMenu">
-		<table class="table">
-			<tr>
-				<td id="img1">
-					<div>
-						<img ng-src="{{ vegflag(x.vegflag) }}" />
-					</div>
-				</td>
-				<td style="width:85%">
-					<div>
-						<h3><span> {{ x.name }} </span></h3>
-					</div>
-				</td>
-				<td>
-					<div>
-						<span> {{ x.price|currency }} </span>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2">
-				<div>
-					<span> Available Time: {{ x.availabletime }} </span>
+    <head>
+        <title>My Restaurant</title>
+        <script src = "../lib/angular.min.js"></script>
+        <script src = "../app/restaurantApp.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body ng-app="restaurantApp" ng-controller="restaurantCotroller">
+	    <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+            	<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+                	<a href="#" class="navbar-brand" style="font-size: 35px; font-family: cursive ">My Restaurant</a>
 				</div>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2">
-				<div>
-					<span> {{ description(x.description) }} </span>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index1.html">Home</a></li>
+						<li><a href="#">Menu</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown">Manage<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Fetch Data</a></li>
+								<li><a href="#">Save Data</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
 				</div>
-				</td>
-			</tr>
-		</table>
-	</div>
-	</div>
-	<div class="col" style="width:20%;height:100%;float:left;"></br>
-	</div>
-</div>
-	</div>
-</body>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row" ng-repeat="x in restaurantMenu">
+				<div class="col-xs-1"></div>
+				<div class="col-xs-10">					
+					<div class="row">
+						<div class="col-xs-10">
+							<img ng-src="{{ vegflag(x.vegflag) }}" alt="" class="img-responsive">
+							<span style="font-size: 25px; font-family: cursive"> {{ x.name }} </span><br>
+							<span style="font-size: 15px; font-family: cursive"> Available Time: {{ x.availabletime }} </span><br>
+							<span style="font-size: 19px; font-family: cursive"> {{ description(x.description) }} </span>					
+						</div>
+						<div class="col-xs-1">
+							<span> {{ x.price|currency }} </span>					
+						</div>
+					</div>
+					<hr>
+				</div>				
+				<div class="col-xs-2"></div>
+			</div>
+		</div>
+	</body>
 </html>
