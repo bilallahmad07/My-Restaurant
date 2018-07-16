@@ -41,10 +41,23 @@
 			</div>
 		</nav>
 		<div class="container">
-			<div class="row" ng-repeat="x in restaurantMenu">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-10">					
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="row" ng-repeat="y in catgry">
+						<div class="col-xs-12">
+							<a href="#{{y}}"><span style="font-size: 30px; font-family: cursive"> {{ y }} </span></a>
+							<hr>
+						</div>						
+					</div>									
+				</div>
+				<div class="col-xs-7">
 					<div class="row">
+						<div class="col-xs-12" id="Chinese Combos">
+								<span style="font-size: 45px; font-family: cursive;">Chinese Combo</span>
+						</div>
+					</div>
+					<div class="row" ng-repeat="x in chinesecombo">
+						<hr>
 						<div class="col-xs-10">
 							<img ng-src="{{ vegflag(x.vegflag) }}" alt="" class="img-responsive">
 							<span style="font-size: 25px; font-family: cursive"> {{ x.name }} </span><br>
@@ -53,9 +66,62 @@
 						</div>
 						<div class="col-xs-1">
 							<span> {{ x.price|currency }} </span>					
-						</div>
+						</div>						
 					</div>
 					<hr>
+					<div class="row">
+						<div class="col-xs-12" id="Chinese Starter">
+							<span style="font-size: 45px; font-family: cursive;">Chinese Starters</span>
+						</div>
+					</div>					
+					<div class="row" ng-repeat="x in chinesestarter">
+						<hr>
+						<div class="col-xs-10">
+							<img ng-src="{{ vegflag(x.vegflag) }}" alt="" class="img-responsive">
+							<span style="font-size: 25px; font-family: cursive"> {{ x.name }} </span><br>
+							<span style="font-size: 15px; font-family: cursive"> Available Time: {{ x.availabletime }} </span><br>
+							<span style="font-size: 19px; font-family: cursive"> {{ description(x.description) }} </span>					
+						</div>
+						<div class="col-xs-1">
+							<span> {{ x.price|currency }} </span>					
+						</div>						
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-12" id="Salads">
+							<span style="font-size: 45px; font-family: cursive;">Salads</span>
+						</div>
+					</div>
+					<div class="row" ng-repeat="x in salad">
+						<hr>
+						<div class="col-xs-10">
+							<img ng-src="{{ vegflag(x.vegflag) }}" alt="" class="img-responsive">
+							<span style="font-size: 25px; font-family: cursive"> {{ x.name }} </span><br>
+							<span style="font-size: 15px; font-family: cursive"> Available Time: {{ x.availabletime }} </span><br>
+							<span style="font-size: 19px; font-family: cursive"> {{ description(x.description) }} </span>					
+						</div>
+						<div class="col-xs-1">
+							<span> {{ x.price|currency }} </span>					
+						</div>						
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-12" id="Oriental">
+							<span style="font-size: 45px; font-family: cursive;">Oriental</span>
+						</div>
+					</div>
+					<div class="row" ng-repeat="x in oriental">
+						<hr>
+						<div class="col-xs-10">
+							<img ng-src="{{ vegflag(x.vegflag) }}" alt="" class="img-responsive">
+							<span style="font-size: 25px; font-family: cursive"> {{ x.name }} </span><br>
+							<span style="font-size: 15px; font-family: cursive"> Available Time: {{ x.availabletime }} </span><br>
+							<span style="font-size: 19px; font-family: cursive"> {{ description(x.description) }} </span>					
+						</div>
+						<div class="col-xs-1">
+							<span> {{ x.price|currency }} </span>					
+						</div>						
+					</div>
 				</div>				
 				<div class="col-xs-2"></div>
 			</div>
